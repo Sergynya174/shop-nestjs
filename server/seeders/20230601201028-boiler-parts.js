@@ -41,7 +41,25 @@ module.exports = {
           partsManufacturers[
             Math.floor(Math.random() * partsManufacturers.length)
           ],
-        //price: faker.random.numeric(4),
+        price: faker.string.numeric(4),
+        name: faker.lorem.sentence(2),
+        description: faker.lorem.sentence(10),
+        images: JSON.stringify(
+          [...Array(7)].map(
+            () =>
+              `${faker.image.urlLoremFlickr({
+                category: 'technics',
+              })}?random=${faker.string.numeric(30)}`,
+          ),
+        ),
+        vendor_code: faker.internet.password(),
+        in_stock: faker.string.numeric(1),
+        bestseller: faker.datatype.boolean(),
+        new: faker.datatype.boolean(),
+        popularity: faker.string.numeric(3),
+        compatibility: faker.lorem.sentence(7),
+        createdAt: new Date(),
+        updatedAt: new Date(),
       })),
     );
   },
