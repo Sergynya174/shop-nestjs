@@ -12,7 +12,10 @@ export class BoilerParts extends Model {
   parts_manufacturer: string;
 
   @Column
-  vender_code: string;
+  name: string;
+
+  @Column
+  vendor_code: string;
 
   @Column
   description: string;
@@ -24,14 +27,11 @@ export class BoilerParts extends Model {
   in_stock: number;
 
   @Column({ defaultValue: false })
-  bestsellers: boolean;
+  bestseller: boolean;
 
   @Column({ defaultValue: false })
   new: boolean;
 
   @Column
   popularity: number;
-
-  @Column
-  compatibility: string;
 }
