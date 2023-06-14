@@ -4,13 +4,13 @@ import { ShoppingCartService } from './shopping-cart.service';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { ShoppingCart } from './shopping-cart.modul';
 import { UsersModule } from 'src/users/users.module';
-import { BoilerParts } from 'src/boiler-parts/boiler-parts.model';
+import { BoilerPartsModule } from 'src/boiler-parts/boiler-parts.module';
 
 @Module({
   imports: [
     SequelizeModule.forFeature([ShoppingCart]),
     UsersModule,
-    BoilerParts,
+    BoilerPartsModule,
   ],
   controllers: [ShoppingCartController],
   providers: [ShoppingCartService],
